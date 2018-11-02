@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice.com" xmlns:intf="http://webservice.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getHello">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getHelloResponse">
+    <complexType>
+     <sequence>
+      <element name="getHelloReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="main">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="args" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mainResponse">
+    <complexType/>
+   </element>
+   <element name="getValue">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getValueResponse">
+    <complexType>
+     <sequence>
+      <element name="getValueReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getString">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getStringResponse">
+    <complexType>
+     <sequence>
+      <element name="getStringReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="mainRequest">
+
+      <wsdl:part element="impl:main" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStringRequest">
+
+      <wsdl:part element="impl:getString" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getValueResponse">
+
+      <wsdl:part element="impl:getValueResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStringResponse">
+
+      <wsdl:part element="impl:getStringResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getHelloRequest">
+
+      <wsdl:part element="impl:getHello" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getValueRequest">
+
+      <wsdl:part element="impl:getValue" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="mainResponse">
+
+      <wsdl:part element="impl:mainResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getHelloResponse">
+
+      <wsdl:part element="impl:getHelloResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WebServiceTest">
+
+      <wsdl:operation name="getHello">
+
+         <wsdl:input message="impl:getHelloRequest" name="getHelloRequest"/>
+
+         <wsdl:output message="impl:getHelloResponse" name="getHelloResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="main">
+
+         <wsdl:input message="impl:mainRequest" name="mainRequest"/>
+
+         <wsdl:output message="impl:mainResponse" name="mainResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getValue">
+
+         <wsdl:input message="impl:getValueRequest" name="getValueRequest"/>
+
+         <wsdl:output message="impl:getValueResponse" name="getValueResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getString">
+
+         <wsdl:input message="impl:getStringRequest" name="getStringRequest"/>
+
+         <wsdl:output message="impl:getStringResponse" name="getStringResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WebServiceTestSoapBinding" type="impl:WebServiceTest">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getHello">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getHelloRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getHelloResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="main">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="mainRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="mainResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getValue">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getValueRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getValueResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getString">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WebServiceTestService">
+
+      <wsdl:port binding="impl:WebServiceTestSoapBinding" name="WebServiceTest">
+
+         <wsdlsoap:address location="http://localhost:8080/SSHN/services/WebServiceTest"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
